@@ -1,26 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Decoder from './decoder';
+import './css/app.scss';
+import './css/buttons.scss';
 
-function App() {
+function Convrtr() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+    <React.Fragment>
+      <header className="app--header">
+        <span className="app--title">Convrtr</span>
+        <span className="app--sub-title">For everlost and Gorllo's</span>
       </header>
-    </div>
+      <main className="app--wrapper">
+        <div className="app--grid">
+          <Decoder name="Text" type="encode" />
+          <Decoder name="Binary" type="decode" />
+          <Decoder name="Hex" type="decode" />
+          <Decoder name="Base64" type="decode" />
+          <Decoder name="Decimal" type="decode" />
+          <Decoder name="Reverse" type="decode" />
+          <Decoder name="Rot13" type="decode" />
+          <Decoder name="Morse" type="decode" />
+          <Decoder name="Morsenary" type="decode" />
+        </div>
+      </main>
+    </React.Fragment>
   );
 }
 
-export default App;
+export default Convrtr;

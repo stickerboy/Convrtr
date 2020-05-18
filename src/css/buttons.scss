@@ -1,0 +1,79 @@
+@import './_colors';
+
+.button {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  font-weight: 400;
+  border-radius: 0.4rem;
+  user-select: none;
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  color: $white;
+  border-color: transparent;
+  background-color: transparent;
+  text-transform: capitalize;
+  transition: color .3s ease-in-out, background-color .3s ease-in-out, border-color .3s ease-in-out, box-shadow .3s ease-in-out;
+
+  &--primary,
+  &--encode {
+    background-color: darken($green, 10%);
+
+    &:focus, 
+    &:active {
+      box-shadow: 0 0 0 0.2rem lighten($green, 12%);
+    }
+
+    &:hover,
+    &:focus {
+      background-color: darken($green, 12%);
+    }
+
+    &:active {
+      background-color: darken($green, 14%);
+    }
+  }
+
+  &--secondary,
+  &--decode {
+    color: $darkgrey;
+    background-color: rgba($lightgrey, 0.03);
+
+    &:focus, 
+    &:active {
+      box-shadow: 0 0 0 0.2rem rgba($lightgrey, 0.08);
+    }
+
+    &:hover,
+    &:focus {
+      background-color: rgba($lightgrey, 0.05);
+    }
+
+    &:active {
+      background-color: rgba($lightgrey, 0.07);
+    }
+  }
+}
+
+.toolbar {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.button-group {
+  display: flex;
+
+  :first-child {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  
+  :last-child {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+}
